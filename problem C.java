@@ -4,13 +4,15 @@ class InvalidDataLimitException extends Exception {
     }
 }
 
-public class DataLimitCheck {
+public class ProblemC {
     public static void main(String[] args) {
         double dataLimit = -5;
 
         try {
             if (dataLimit < 0)
-                throw new InvalidDataLimitException("Data limit cannot be negative");
+                throw new InvalidDataLimitException(
+                    "Data limit cannot be negative"
+                );
 
             System.out.println("Valid Data Limit: " + dataLimit + " GB");
         } catch (InvalidDataLimitException e) {
