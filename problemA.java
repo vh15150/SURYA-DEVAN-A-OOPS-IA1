@@ -1,38 +1,34 @@
 class Plan {
-    String planName;
-    double dataLimitGB;
+    String name;
+    double data;
 
-    Plan(String planName, double dataLimitGB) {
-        this.planName = planName;
-        this.dataLimitGB = dataLimitGB;
+    Plan(String name, double data) {
+        this.name = name;
+        this.data = data;
     }
 
-    void display() {
-        System.out.println("Plan Name: " + planName);
-        System.out.println("Data Limit: " + dataLimitGB + " GB");
+    void show() {
+        System.out.println("Plan: " + name);
+        System.out.println("Data: " + data + " GB");
     }
 }
 
 class PostpaidPlan extends Plan {
-    String billingCycle;
 
-    PostpaidPlan(String planName, double dataLimitGB, String billingCycle) {
-        super(planName, dataLimitGB);
-        this.billingCycle = billingCycle;
+    PostpaidPlan(String name, double data) {
+        super(name, data);
     }
 
-    @Override
-    void display() {
-        super.display();
-        System.out.println("Billing Cycle: " + billingCycle);
+    void show() {
+        super.show();
+        System.out.println("Billing: Monthly");
     }
 }
 
-public class ProblemA {
+public class Main {
     public static void main(String[] args) {
-        PostpaidPlan p = new PostpaidPlan(
-            "5G Premium", 50.0, "Monthly"
-        );
-        p.display();
+
+        PostpaidPlan p = new PostpaidPlan("5G Premium", 50);
+        p.show();
     }
 }
