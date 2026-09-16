@@ -3,14 +3,15 @@ abstract class Recharge {
 }
 
 class PrepaidRecharge extends Recharge {
-    @Override
+
     void processRecharge() {
-        System.out.println("Prepaid recharge processed successfully.");
+        System.out.println("Prepaid recharge successful.");
     }
 }
 
-public class ProblemB {
+public class Main {
     public static void main(String[] args) {
+
         PrepaidRecharge p = new PrepaidRecharge();
         p.processRecharge();
     }
